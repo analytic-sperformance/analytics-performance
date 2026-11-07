@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+*.parquet
+data/raw/
+data/processed/
+
+# Model artifacts
+*.pkl
+*.joblib
+*.model
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
