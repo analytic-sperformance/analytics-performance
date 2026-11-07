@@ -1,210 +1,111 @@
-\# NBA Predictive Analytics \& Market Intelligence
+# NBA Predictive Analytics & Market Intelligence
 
+**End-to-end NBA analytics pipeline for team scoring prediction, historical performance analysis, and sports betting market research.**
 
+This project combines historical NBA statistics with sportsbook market data to build predictive features, train statistical models, and estimate game outcome probabilities.
 
-An end-to-end predictive analytics project focused on NBA team scoring forecasts, historical performance analysis, and sportsbook market evaluation.
+**Status:** Independent research project · Research prototype
 
+---
 
+## Project Overview
 
-\## Overview
+The project implements a multi-stage analytics pipeline:
 
+- Collection and processing of historical NBA game statistics
+- Collection and aggregation of sportsbook market data
+- Team-level feature engineering and historical performance analysis
+- Predictive modeling using machine learning and statistical methods
+- Future game predictions and probability estimation
 
+## Architecture
 
-This project combines historical NBA game statistics, team performance indicators, and betting market data to develop predictive models and evaluate potential market inefficiencies.
+```mermaid
+flowchart TD
+    A[Basketball Reference] --> B[Historical Data Pipeline]
+    C[The Odds API] --> D[Market Data Pipeline]
 
+    B --> E[Data Cleaning & Feature Engineering]
+    D --> F[Market Data Aggregation]
 
+    E --> G[Training Dataset]
+    F --> G
 
-The pipeline covers data collection, preprocessing, feature engineering, predictive modeling, and historical model evaluation.
-
-
-
-\*\*Project status:\*\* Research prototype.
-
-
-
-\## Architecture
-
-
-
-```text
-
-Data Collection
-
-&#x20;     |
-
-&#x20;     v
-
-Data Cleaning \& Normalization
-
-&#x20;     |
-
-&#x20;     v
-
-Feature Engineering
-
-&#x20;     |
-
-&#x20;     v
-
-Market Data Processing
-
-&#x20;     |
-
-&#x20;     v
-
-Dataset Construction
-
-&#x20;     |
-
-&#x20;     v
-
-Predictive Modeling
-
-&#x20;     |
-
-&#x20;     v
-
-Prediction \& Evaluation
-
+    G --> H[Model Training]
+    H --> I[Future Predictions]
+    I --> J[Probability & Market Analysis]
 ```
 
+## Repository Structure
 
+| Notebook | Description |
+|---|---|
+| `data_pipeline.ipynb` | Historical NBA data collection, preprocessing, and feature engineering |
+| `market_pipeline.ipynb` | Sportsbook odds collection, snapshots, and market aggregation |
+| `train_model.ipynb` | Model training, feature processing, and historical evaluation |
+| `predict_future.ipynb` | Predictions for upcoming games and probability estimation |
 
-\## Key Components
+## Technical Implementation
 
+### Data Engineering
 
+- Historical data extraction and incremental updates
+- Data cleaning and normalization
+- Team and game identification
+- Market snapshots collection and aggregation
+- CSV and Parquet-based data processing
 
-\### Data Collection
+### Feature Engineering
 
-\- Historical NBA game statistics
+- Rolling team performance metrics
+- Offensive and defensive indicators
+- Pace and scoring efficiency metrics
+- Rest days and back-to-back indicators
+- Performance volatility
+- Market-derived features
 
-\- Team-level performance data
+### Predictive Modeling
 
-\- Sportsbook market snapshots
+The project explores several modeling approaches:
 
-\- Incremental data collection
+- **XGBoost** — machine learning-based scoring predictions
+- **PCA** — dimensionality reduction and feature extraction
+- **Ridge Regression** — regularized statistical modeling
+- **Student's t-distribution** — probability estimation based on prediction uncertainty
 
+### Evaluation & Market Analysis
 
+- Walk-forward validation
+- Historical prediction analysis
+- Over/Under probability estimation
+- Expected value calculations
+- Comparison of model estimates with sportsbook market lines
 
-\### Data Processing
+## Technology Stack
 
-\- Data cleaning and normalization
+| Category | Technologies |
+|---|---|
+| Language | Python |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-learn, XGBoost |
+| Statistical Analysis | SciPy |
+| Data Collection | BeautifulSoup, Cloudscraper |
+| Environment | Jupyter Notebook |
+| Storage | CSV, Parquet |
 
-\- Team and event identification
+## Data Sources
 
-\- Historical dataset construction
+- [Basketball Reference](https://www.basketball-reference.com/) — historical NBA statistics
+- [The Odds API](https://the-odds-api.com/) — sportsbook market data and odds
 
-\- Market data aggregation
+Raw datasets, model artifacts, and API credentials are not included in the repository.
 
+## Limitations
 
+This repository represents an independent research prototype. Model predictions, historical performance, and expected value estimates do not establish guaranteed profitability or future betting returns.
 
-\### Feature Engineering
+Reproducing the complete pipeline requires access to the original data sources and the corresponding API credentials.
 
-\- Rolling team performance metrics
+---
 
-\- Offensive and defensive indicators
-
-\- Pace-related metrics
-
-\- Rest days and back-to-back indicators
-
-\- Performance volatility
-
-\- Market-derived features
-
-
-
-\### Predictive Modeling
-
-\- XGBoost
-
-\- PCA-based feature extraction
-
-\- Ridge Regression
-
-\- Statistical probability estimation using Student's t-distribution
-
-
-
-\### Model Evaluation
-
-\- Walk-forward validation
-
-\- Historical prediction analysis
-
-\- Over/Under probability estimation
-
-\- Expected value calculations
-
-
-
-\## Technology Stack
-
-
-
-\- Python
-
-\- Pandas / NumPy
-
-\- Scikit-learn
-
-\- XGBoost
-
-\- SciPy
-
-\- BeautifulSoup / Cloudscraper
-
-\- Jupyter Notebook
-
-\- CSV / Parquet
-
-
-
-\## Data Sources
-
-
-
-\- Basketball Reference
-
-\- The Odds API
-
-
-
-Data files and API credentials are not included in this repository.
-
-
-
-\## Repository Structure
-
-
-
-```text
-
-nba-predictive-analytics/
-
-├── data\_pipeline.ipynb
-
-├── market\_pipeline.ipynb
-
-├── predict\_future.ipynb
-
-├── train\_model.ipynb
-
-├── README.md
-
-└── .gitignore
-
-```
-
-
-
-\## Limitations
-
-
-
-This project is an independent research prototype. Historical model performance and expected value calculations should not be interpreted as evidence of guaranteed profitability or future betting returns.
-
-
-
-Reproducibility depends on access to the original data sources and required API credentials.
-
+*Built as an independent data analytics and predictive modeling project.*
