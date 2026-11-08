@@ -1,22 +1,25 @@
 # NBA Predictive Analytics & Market Intelligence
 
-**End-to-end NBA analytics pipeline for team scoring prediction, historical performance analysis, and sports betting market research.**
+**An NBA analytics pipeline for team scoring predictions, historical performance analysis, and sports betting market research.**
 
-This project combines historical NBA statistics with sportsbook market data to build predictive features, train statistical models, and estimate game outcome probabilities.
+This project combines historical NBA game statistics with sportsbook odds data to build predictive features, train statistical models, and estimate game outcome probabilities.
 
 **Status:** Independent research project · Research prototype
 
 ---
 
-## Project Overview
+## Overview
 
-The project implements a multi-stage analytics pipeline:
+The project brings together historical game data and sportsbook market information in a multi-stage analytics pipeline.
 
-- Collection and processing of historical NBA game statistics
-- Collection and aggregation of sportsbook market data
-- Team-level feature engineering and historical performance analysis
-- Predictive modeling using machine learning and statistical methods
-- Future game predictions and probability estimation
+Its main stages include:
+
+- Historical NBA statistics collection and preprocessing.
+- Sportsbook odds collection and market data aggregation.
+- Team-level feature engineering and performance analysis.
+- Statistical modeling and machine learning.
+- Future game predictions and probability estimation.
+- Comparison of model estimates with sportsbook market lines.
 
 ## Architecture
 
@@ -38,10 +41,12 @@ flowchart TD
 
 ## Repository Structure
 
+The project is organized into four main Jupyter notebooks:
+
 | Notebook | Description |
 |---|---|
 | `data_pipeline.ipynb` | Historical NBA data collection, preprocessing, and feature engineering |
-| `market_pipeline.ipynb` | Sportsbook odds collection, snapshots, and market aggregation |
+| `market_pipeline.ipynb` | Sportsbook odds collection, market snapshots, and aggregation |
 | `train_model.ipynb` | Model training, feature processing, and historical evaluation |
 | `predict_future.ipynb` | Predictions for upcoming games and probability estimation |
 
@@ -49,37 +54,41 @@ flowchart TD
 
 ### Data Engineering
 
-- Historical data extraction and incremental updates
-- Data cleaning and normalization
-- Team and game identification
-- Market snapshots collection and aggregation
-- CSV and Parquet-based data processing
+- Historical data extraction and incremental updates.
+- Data cleaning and normalization.
+- Team and game identification.
+- Collection and aggregation of sportsbook market snapshots.
+- CSV and Parquet data processing.
 
 ### Feature Engineering
 
-- Rolling team performance metrics
-- Offensive and defensive indicators
-- Pace and scoring efficiency metrics
-- Rest days and back-to-back indicators
-- Performance volatility
-- Market-derived features
+The pipeline builds team-level features to describe recent performance, scoring patterns, and game conditions.
+
+Key feature groups include:
+
+- Rolling team performance metrics.
+- Offensive and defensive indicators.
+- Pace and scoring efficiency metrics.
+- Rest days and back-to-back indicators.
+- Performance volatility.
+- Market-derived features.
 
 ### Predictive Modeling
 
-The project explores several modeling approaches:
+The project explores several statistical and machine learning approaches:
 
-- **XGBoost** — machine learning-based scoring predictions
-- **PCA** — dimensionality reduction and feature extraction
-- **Ridge Regression** — regularized statistical modeling
-- **Student's t-distribution** — probability estimation based on prediction uncertainty
+- **XGBoost** — predicts team scoring using engineered features.
+- **Ridge Regression** — provides regularized regression estimates.
+- **PCA** — reduces feature dimensionality and helps analyze relationships between variables.
+- **Student's t-distribution** — models prediction uncertainty for probability estimation.
 
 ### Evaluation & Market Analysis
 
-- Walk-forward validation
-- Historical prediction analysis
-- Over/Under probability estimation
-- Expected value calculations
-- Comparison of model estimates with sportsbook market lines
+- Walk-forward validation using historical game data.
+- Historical prediction performance analysis.
+- Over/Under probability estimation.
+- Expected value calculations.
+- Comparison of model estimates against sportsbook market lines.
 
 ## Technology Stack
 
@@ -95,17 +104,17 @@ The project explores several modeling approaches:
 
 ## Data Sources
 
-- [Basketball Reference](https://www.basketball-reference.com/) — historical NBA statistics
-- [The Odds API](https://the-odds-api.com/) — sportsbook market data and odds
+- [Basketball Reference](https://www.basketball-reference.com/) — historical NBA statistics.
+- [The Odds API](https://the-odds-api.com/) — sportsbook odds and market data.
 
-Raw datasets, model artifacts, and API credentials are not included in the repository.
+Raw datasets, trained model artifacts, and API credentials are not included in the repository.
 
 ## Limitations
 
-This repository represents an independent research prototype. Model predictions, historical performance, and expected value estimates do not establish guaranteed profitability or future betting returns.
+This repository is an independent research prototype. Model outputs and expected value estimates are based on historical data and do not guarantee predictive accuracy or profitable betting outcomes.
 
-Reproducing the complete pipeline requires access to the original data sources and the corresponding API credentials.
+Reproducing the full pipeline requires access to the original data sources and the corresponding API credentials.
 
 ---
 
-*Built as an independent data analytics and predictive modeling project.*
+*An independent project exploring sports analytics, predictive modeling, and betting market data.*
